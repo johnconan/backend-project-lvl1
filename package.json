@@ -1,0 +1,19 @@
+{
+  "name": "my_project_brain_games",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnconan/backend-project-lvl1.git"
+  },
+  "author": "Pavel Khrustalyov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnconan/backend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/johnconan/backend-project-lvl1#readme"
+}
