@@ -4,6 +4,7 @@ import greeting from '..';
 
 const isEven = (num) => (num % 2 === 0 ? 'yes' : 'no');
 const generateNumber = () => Math.floor(Math.random() * 20 + 1);
+const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const brainEven = (name) => {
   const iter = (counter) => {
@@ -25,4 +26,4 @@ const brainEven = (name) => {
   return iter(3);
 };
 
-greeting('Answer "yes" if the number is even, otherwise answer "no".', brainEven);
+greeting(rules, brainEven);
