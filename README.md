@@ -23,3 +23,9 @@ $ brain-even
 $ brain-calc
 ```
 [![asciicast](https://asciinema.org/a/KNEbyvLS2L3hnLW3Ro2hfMNNI.svg)](https://asciinema.org/a/KNEbyvLS2L3hnLW3Ro2hfMNNI)
+
+### Find the greatest common divisor of given numbers
+```sh
+$ brain-gcd
+```
+[![asciicast](https://asciinema.org/a/S9Ey6VzgkSqvmaOWzNpjNrGOS.svg)](https://asciinema.org/a/S9Ey6VzgkSqvmaOWzNpjNrGOS)
