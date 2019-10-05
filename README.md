@@ -17,3 +17,9 @@ $ npm link
 $ brain-even
 ```
 [![asciicast](https://asciinema.org/a/kRSK7581UqSzCsUlva9vD7UP3.svg)](https://asciinema.org/a/kRSK7581UqSzCsUlva9vD7UP3)
+
+### What is the result of the expression?
+```sh
+$ brain-calc
+```
+[![asciicast](https://asciinema.org/a/KNEbyvLS2L3hnLW3Ro2hfMNNI.svg)](https://asciinema.org/a/KNEbyvLS2L3hnLW3Ro2hfMNNI)
