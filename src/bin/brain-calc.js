@@ -1,32 +1,19 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
 import gameInit from '..';
+import { generateNumber, generateOperator } from '../utilities';
 
-const generateNumber = () => Math.floor(Math.random() * 20 + 1);
 const rules = 'What is the result of the expression?';
 
-const generateOperator = () => {
-  const opArr = ['*', '-', '+'];
-  const random = Math.floor(Math.random() * opArr.length);
-  return opArr[random];
-};
-
-const game = (name, step) => {
-  if (step === 0) {
-    console.log(`Congratulations, ${name}!`);
-    return;
-  }
-
-  const randomNum1 = generateNumber();
-  const randomNum2 = generateNumber();
+const game = () => {
+  const randomNum1 = generateNumber(1, 20);
+  const randomNum2 = generateNumber(1, 20);
   const randomOperator = generateOperator();
   const question = `${randomNum1}${randomOperator}${randomNum2}`;
-  const isDivision = randomNum1 > randomNum2 ? randomNum1 - randomNum2 : randomNum2 - randomNum1;
   let correctAnswer;
 
   switch (randomOperator) {
     case '-':
-      correctAnswer = isDivision;
+      correctAnswer = randomNum1 - randomNum2;
       break;
     case '*':
       correctAnswer = randomNum1 * randomNum2;
@@ -37,15 +24,10 @@ const game = (name, step) => {
     default:
       correctAnswer = 'Unknown';
   }
-
-  console.log(`Question: ${question}`);
-  const yourAnswer = +readlineSync.question('Your answer: ');
-  if (yourAnswer !== correctAnswer) {
-    console.log(`'${yourAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${name}!`);
-    return;
-  }
-  console.log('Correct!');
-  game(name, step - 1);
+  return {
+    question,
+    correctAnswer: String(correctAnswer),
+  };
 };
 
 gameInit(rules, game);
