@@ -29,3 +29,15 @@ $ brain-calc
 $ brain-gcd
 ```
 [![asciicast](https://asciinema.org/a/S9Ey6VzgkSqvmaOWzNpjNrGOS.svg)](https://asciinema.org/a/S9Ey6VzgkSqvmaOWzNpjNrGOS)
+
+### What number is missing in the progression?
+```sh
+$ brain-progression
+```
+[![asciicast](https://asciinema.org/a/1CNlpvQCx5hLghuz9L96tnCBI.svg)](https://asciinema.org/a/1CNlpvQCx5hLghuz9L96tnCBI)
+
+### Is a Prime?
+```sh
+$ brain-prime
+```
+[![asciicast](https://asciinema.org/a/JZM03H77CmdpdCGQm2Kldzip6.svg)](https://asciinema.org/a/JZM03H77CmdpdCGQm2Kldzip6)

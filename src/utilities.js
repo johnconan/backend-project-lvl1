@@ -1,7 +1,18 @@
 // Generate random number 1 / 20;
 const generateNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
 // check number is even
-const isEven = (num) => (num % 2 === 0 ? 'yes' : 'no');
+const isEven = (num) => (num % 2 === 0);
+
+// check number is prime
+const isPrime = (num) => {
+  const iter = (count) => {
+    if (num === count) return true;
+    if (num % count === 0) return false;
+    return iter(count + 1);
+  };
+  return iter(2);
+};
 
 // Find greatest divisor between two numbers;
 const greatestDivisor = (num1, num2) => {
@@ -26,4 +37,5 @@ export {
   greatestDivisor,
   isEven,
   generateOperator,
+  isPrime,
 };
