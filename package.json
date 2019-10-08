@@ -1,8 +1,13 @@
 {
   "name": "my_project_brain_games_hex",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A small collection of console games for the brain",
   "main": "",
+  "keywords": [
+    "brain",
+    "games",
+    "entertainment"
+  ],
   "scripts": {
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"

@@ -1,9 +1,11 @@
 import gameInit from '..';
-import { generateNumber, isEven } from '../utilities';
+import generateNumber from '../utilities';
 
-const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const game = () => {
+const isEven = (num) => (num % 2 === 0);
+
+const startTheEvenGame = () => {
   const question = generateNumber(1, 20);
   const correctAnswer = isEven(question) ? 'yes' : 'no';
   return {
@@ -12,4 +14,4 @@ const game = () => {
   };
 };
 
-export default () => gameInit(rules, game);
+export default () => gameInit(description, startTheEvenGame);

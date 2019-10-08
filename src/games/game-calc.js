@@ -1,9 +1,15 @@
 import gameInit from '..';
-import { generateNumber, generateOperator } from '../utilities';
+import generateNumber from '../utilities';
 
-const rules = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
-const game = () => {
+const generateOperator = () => {
+  const opArr = ['*', '-', '+'];
+  const random = Math.floor(Math.random() * opArr.length);
+  return opArr[random];
+};
+
+const startTheCalcGame = () => {
   const randomNum1 = generateNumber(1, 20);
   const randomNum2 = generateNumber(1, 20);
   const randomOperator = generateOperator();
@@ -21,7 +27,7 @@ const game = () => {
       correctAnswer = randomNum1 + randomNum2;
       break;
     default:
-      correctAnswer = 'Unknown';
+      return false;
   }
   return {
     question,
@@ -29,4 +35,4 @@ const game = () => {
   };
 };
 
-export default () => gameInit(rules, game);
+export default () => gameInit(description, startTheCalcGame);

@@ -1,27 +1,27 @@
 import gameInit from '..';
-import { generateNumber } from '../utilities';
+import generateNumber from '../utilities';
 
-const rules = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
-const countNumbers = 10;
+const progressionLength = 10;
 
-const game = () => {
-  const randomStep = generateNumber(2, 10);
-  const randomDots = generateNumber(1, 10);
+const startTheProgressGame = () => {
+  const step = generateNumber(2, 10);
+  const dots = generateNumber(0, progressionLength);
   const start = generateNumber(1, 50);
   let question = '';
-  for (let i = 1; i <= countNumbers; i += 1) {
-    if (i === randomDots) {
-      question += '.. ';
+  for (let i = 0; i <= progressionLength; i += 1) {
+    if (i === dots) {
+      question = `${question}.. `;
     } else {
-      question += `${start + randomStep * i} `;
+      question = `${question}${start + step * i} `;
     }
   }
-  const correctAnswer = start + randomStep * randomDots;
+  const correctAnswer = start + step * dots;
   return {
-    question,
+    question: question.trim(),
     correctAnswer: String(correctAnswer),
   };
 };
 
-export default () => gameInit(rules, game);
+export default () => gameInit(description, startTheProgressGame);
