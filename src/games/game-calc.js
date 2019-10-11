@@ -2,29 +2,29 @@ import gameInit from '..';
 import generateNumber from '../utilities';
 
 const description = 'What is the result of the expression?';
+const operations = ['*', '-', '+'];
 
-const generateOperator = () => {
-  const opArr = ['*', '-', '+'];
-  const random = Math.floor(Math.random() * opArr.length);
-  return opArr[random];
+const getOperation = () => {
+  const randomNum = generateNumber(0, operations.length - 1);
+  return operations[randomNum];
 };
 
-const startTheCalcGame = () => {
-  const randomNum1 = generateNumber(1, 20);
-  const randomNum2 = generateNumber(1, 20);
-  const randomOperator = generateOperator();
-  const question = `${randomNum1}${randomOperator}${randomNum2}`;
+const generateDataGame = () => {
+  const x = generateNumber(1, 20);
+  const y = generateNumber(1, 20);
+  const operation = getOperation();
+  const question = `${x}${operation}${y}`;
   let correctAnswer;
 
-  switch (randomOperator) {
+  switch (operation) {
     case '-':
-      correctAnswer = randomNum1 - randomNum2;
+      correctAnswer = x - y;
       break;
     case '*':
-      correctAnswer = randomNum1 * randomNum2;
+      correctAnswer = x * y;
       break;
     case '+':
-      correctAnswer = randomNum1 + randomNum2;
+      correctAnswer = x + y;
       break;
     default:
       return false;
@@ -35,4 +35,4 @@ const startTheCalcGame = () => {
   };
 };
 
-export default () => gameInit(description, startTheCalcGame);
+export default () => gameInit(description, generateDataGame);
